@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourTravelPlanner Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-color: #f2f2f2;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full screen height */
+            overflow: hidden; /* Hide overflow for sliding effect */
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.7;
+            filter: blur(5px);
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .arrow-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .arrow-button.left {
+            left: 20px;
+        }
+
+        .arrow-button.right {
+            right: 20px;
+        }
+
+        .info-box {
+            position: absolute;
+            bottom: 50px; /* Adjust the distance from the bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            color: #fff;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px; /* Adjust the max width as needed */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .explore-button,
+        .book-button {
+            display: inline-block;
+            background-color: #2196F3;
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .explore-button:hover,
+        .book-button:hover {
+            background-color: #0a6fcd;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center;
+            padding: 10px 0; /* Adjust vertical padding */
+            z-index: 1000;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = [
+                "egypt.jpeg",
+                "long.jpeg",
+                "rome.jpeg",
+                "hitlerparis.jpeg",
+                "sproe.jpeg"
+            ];
+            const imageInfo = [
+                {
+                    title: "Image 1 Title",
+                    description: "Description for Image 1."
+                },
+                {
+                    title: "Image 2 Title",
+                    description: "Description for Image 2."
+                },
+                {
+                    title: "Image 3 Title",
+                    description: "Description for Image 3."
+                },
+                {
+                    title: "Image 4 Title",
+                    description: "Description for Image 4."
+                },
+                {
+                    title: "Image 5 Title",
+                    description: "Description for Image 5."
+                }
+            ];
+            let currentImageIndex = 0;
+            const slideshowImage = document.querySelector(".slideshow-container img");
+            const infoBox = document.querySelector(".info-box");
+            const exploreButton = document.querySelector(".explore-button");
+            const bookButton = document.querySelector(".book-button");
+
+            function updateImage() {
+                slideshowImage.src = images[currentImageIndex];
+                infoBox.querySelector("h2").textContent = imageInfo[currentImageIndex].title;
+                infoBox.querySelector("p").textContent = imageInfo[currentImageIndex].description;
+            }
+
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            }
+
+            function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            }
+
+            updateImage();
+
+            const nextButton = document.querySelector(".arrow-button.right");
+            const prevButton = document.querySelector(".arrow-button.left");
+
+            nextButton.addEventListener("click", showNextImage);
+            prevButton.addEventListener("click", showPrevImage);
+
+            exploreButton.addEventListener("click", showNextImage);
+            bookButton.addEventListener("click", showNextImage);
+        });
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <a href="dashboard.html">Home</a>
+        <a href="#">Destinations</a>
+        <a href="#">Itineraries</a>
+        <a href="#">Profile</a>
+        <a href="form.html">Logout/Login</a>
+    </div>
+    <div class="slideshow-container">
+        <img src="egypt.jpeg" alt="Slideshow Image">
+        <button class="arrow-button left">&#8592;</button>
+        <button class="arrow-button right">&#8594;</button>
+        <div class="info-box">
+            <h2>Image Title</h2>
+            <p>Description of the image. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="explore-button">Explore</button>
+            <button class="book-button">Book</button>
+        </div>
+    </div>
+</body>
+</html>

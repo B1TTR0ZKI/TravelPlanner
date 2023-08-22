@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - YourTravelPlanner</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        @font-face {
+            font-family: hehe;
+            src: url(Caprasimo-Regular.ttf);
+        }
+
+        header {
+            background-image: url('topa.jpg');
+            background-size: cover;
+            font-family: hehe;
+            background-color: rgba(0, 0, 0, 0.5); /* Adding opacity */
+            color: #002e22;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: calc(100vh - 150px);
+        }
+
+        .registration-container {
+            background-color: #f4f4f4;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 48%;
+        }
+
+        .registration-container h2 {
+            margin-bottom: 1em;
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form input {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>YourTravelPlanner</h1>
+        <p>Your Ultimate Travel Companion</p>
+    </header>
+    <main>
+        <div class="registration-container">
+            <h2>Create an Account</h2>
+            <form action="#">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="form.html">Login here</a></p>
+        </div>
+        <div class="image-container">
+            <img src="travel.jpg" alt="Travel Adventure">
+        </div>
+    </main>
+</body>
+</html>
