@@ -40,6 +40,11 @@
             text-align: center;
             width: 48%;
         }
+        
+        .gender{
+            display: inline-flex;
+            align-items: start;
+        }
 
         .registration-container h2 {
             margin-bottom: 1em;
@@ -68,7 +73,7 @@
         }
 
         form input {
-            width: 100%;
+            width: 75%;
             padding: 0.5em;
             margin-bottom: 1em;
             border: 1px solid #ccc;
@@ -76,6 +81,7 @@
         }
 
         form button {
+            width: 30%;
             background-color: #333;
             color: #fff;
             padding: 0.5em 1em;
@@ -102,7 +108,10 @@
                 <input type="email" placeholder="Email" required>
                 <input type="password" placeholder="Password" required>
                 <input type="password" placeholder="Confirm Password" required>
-                <button type="submit">Register</button>
+                <br>
+                <label class="gender"><input type="radio" name="gender" />Male<input type="radio" name="gender"/>Female</label>
+                <br>
+                <button type="submit" >Register</button>
             </form>
             <p>Already have an account? <a href="form.html">Login here</a></p>
         </div>
