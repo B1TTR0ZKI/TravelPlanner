@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet version='1.0' type='text/xsl' href='destination.xsl' ?>
+<destinations>
+    <place>
+        <name>Paris</name>
+        <tagline>Paris, the 'City of Love'</tagline>
+    </place>
+    <place>
+        <name>London</name>
+        <tagline>London, the capital of England</tagline>
+    </place>
+    <place>
+        <name>Japan</name>
+        <tagline>Japan, a land of contrasts</tagline>
+    </place>
+    <place>
+        <name>Germany</name>
+        <tagline>Germany, Einigkeit und Recht und Freiheit</tagline>
+    </place>
+    <place>
+        <name>Australia</name>
+        <tagline>Australia, The Land Down Under</tagline>
+    </place>
+    <place>
+        <name>Italy</name>
+        <tagline>Italy, The Heart of the Mediterranean</tagline>
+    </place>
+    <place>
+        <name>Spain</name>
+        <tagline>Spain, A Vibrant Blend of Cultures</tagline>
+    </place>
+    <place>
+        <name>Greece</name>
+        <tagline>Greece, Cradle of Western Civilization</tagline>
+    </place>
+</destinations>
