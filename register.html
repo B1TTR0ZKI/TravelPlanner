@@ -12,11 +12,11 @@
 
         @font-face {
             font-family: hehe;
-            src: url(Caprasimo-Regular.ttf);
+            src: url(assets/Caprasimo-Regular.ttf);
         }
 
         header {
-            background-image: url('topa.jpg');
+            background-image: url('assets/topa.jpg');
             background-size: cover;
             font-family: hehe;
             background-color: rgba(0, 0, 0, 0.5); /* Adding opacity */
@@ -103,20 +103,24 @@
     <main>
         <div class="registration-container">
             <h2>Create an Account</h2>
-            <form action="#">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
+            <form action="database/register.php" method="post">
+                <input name="name" type="text" placeholder="Full Name" required>
+                <input name="email" type="email" placeholder="Email" required>
+                <input name="password" type="password" placeholder="Password" required>
                 <input type="password" placeholder="Confirm Password" required>
                 <br>
-                <label class="gender"><input type="radio" name="gender" />Male<input type="radio" name="gender"/>Female</label>
+                <label class="gender">
+                    <input type="radio" name="gender" value="Male" id="male" required> Male
+                    <input type="radio" name="gender" value="Female" id="female" required> Female
+                </label>
                 <br>
+                <input name="phone" type="text" placeholder="Phone" required>
                 <button type="submit" >Register</button>
-            </form>
+            </form>            
             <p>Already have an account? <a href="form.html">Login here</a></p>
         </div>
         <div class="image-container">
-            <img src="travel.jpg" alt="Travel Adventure">
+            <img src="assets/travel.jpg" alt="Travel Adventure">
         </div>
     </main>
 </body>

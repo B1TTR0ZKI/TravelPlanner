@@ -1,21 +1,14 @@
 <?php
+$host = "localhost"; // Your database host
+$username = "root"; // Your database username
+$password = ""; // Your database password
+$database = "travel_planner"; // Your database name
 
-class DataBaseConfig
-{
-    public $servername;
-    public $username;
-    public $password;
-    public $databasename;
+// Create a connection to the database
+$conn = new mysqli($host, $username, $password, $database);
 
-    public function __construct()
-    {
-
-        $this->servername = 'localhost';
-        $this->username = 'root';
-        $this->password = '';
-        $this->databasename = 'travel_planner';
-
-    }
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-
 ?>

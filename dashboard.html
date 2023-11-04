@@ -101,86 +101,44 @@
             margin: 0 15px;
             font-size: 16px;
         }
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        /* Style for the close button within the popup */
+        .popup-container .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const images = [
-                "egypt.jpeg",
-                "long.jpeg",
-                "rome.jpeg",
-                "hitlerparis.jpeg",
-                "sproe.jpeg"
-            ];
-            const imageInfo = [
-                {
-                    title: "Explore the Mysteries of Egypt",
-                    description: "Discover the ancient wonders and rich history of Egypt."
-                },
-                {
-                    title: "Vibrant Life in London",
-                    description: "Experience the bustling streets and iconic landmarks of London."
-                },
-                {
-                    title: "Romantic Adventures in Rome",
-                    description: "Indulge in the romantic charm and exquisite culture of Rome."
-                },
-                {
-                    title: "Elegance and Glamour in Paris",
-                    description: "Immerse yourself in the elegance and glamour of the City of Light."
-                },
-                {
-                    title: "Sensory Delights in Singapore",
-                    description: "Treat your senses to the diverse culinary and cultural experiences of Singapore."
-                }
-            ];
-
-            let currentImageIndex = 0;
-            const slideshowImage = document.querySelector(".slideshow-container img");
-            const infoBox = document.querySelector(".info-box");
-            const exploreButton = document.querySelector(".explore-button");
-            const bookButton = document.querySelector(".book-button");
-
-            function updateImage() {
-                slideshowImage.src = images[currentImageIndex];
-                infoBox.querySelector("h2").textContent = imageInfo[currentImageIndex].title;
-                infoBox.querySelector("p").textContent = imageInfo[currentImageIndex].description;
-            }
-
-            function showNextImage() {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                updateImage();
-            }
-
-            function showPrevImage() {
-                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-                updateImage();
-            }
-
-            updateImage();
-
-            const nextButton = document.querySelector(".arrow-button.right");
-            const prevButton = document.querySelector(".arrow-button.left");
-
-            nextButton.addEventListener("click", showNextImage);
-            prevButton.addEventListener("click", showPrevImage);
-
-            exploreButton.addEventListener("click", showNextImage);
-            bookButton.addEventListener("click", showNextImage);
-        });
+    <script src = "backend/dashboard.js">
     </script>
 </head>
 <body>
     <div class="nav" >   
-        <h1 style="font-style: url('madelina.ttf'); color: white;">Your Travel Planner</h1>
-        <img src="logoPlanner.png" style="height: 200px; width: 200px;">
+        <h1 style="font-style: url('assets/madelina.ttf'); color: white;">Your Travel Planner</h1>
+        <img src="assets/logoPlanner.png" style="height: 200px; width: 200px;">
         <a href="dashboard.html">Home</a>
         <a href="destinations.html">Destinations</a>
         <a href="#">Itineraries</a>
         <a href="#">Profile</a>
-        <a href="form.html">Logout/Login</a>
+        <a href="index.html">Logout/Login</a>
     </div>
     <div class="slideshow-container">
-        <img src="egypt.jpeg" alt="Slideshow Image">
+        <img src="assets/egypt.jpeg" alt="Slideshow Image">
         <button class="arrow-button left">&#8592;</button>
         <button class="arrow-button right">&#8594;</button>
         <div class="info-box">
@@ -190,5 +148,10 @@
             <button class="book-button">Book</button>
         </div>
     </div>
+    <div class="popup-container" id="welcome-popup">
+        <p id="welcomemsg"></p>
+        <span class="close-button" onclick="closePopup()">&times;</span>
+    </div>
+
 </body>
 </html>
