@@ -1,157 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourTravelPlanner Dashboard</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-            background-color: #f2f2f2;
-        }
-
-        .slideshow-container {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Full screen height */
-            overflow: hidden; /* Hide overflow for sliding effect */
-        }
-
-        .slideshow-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0.7;
-            filter: blur(5px);
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .arrow-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .arrow-button.left {
-            left: 20px;
-        }
-
-        .arrow-button.right {
-            right: 20px;
-        }
-
-        .info-box {
-            position: absolute;
-            bottom: 50px; /* Adjust the distance from the bottom */
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            color: #fff;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px; /* Adjust the max width as needed */
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .explore-button,
-        .book-button {
-            display: inline-block;
-            background-color: #2196F3;
-            color: #fff;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .explore-button:hover,
-        .book-button:hover {
-            background-color: #0a6fcd;
-        }
-
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: left; /* Center the content horizontally */
-            align-items: center;
-            padding: 10px 0; /* Adjust vertical padding */
-            z-index: 1000;
-        }
-
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 16px;
-        }
-        .popup-container {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            z-index: 1000;
-        }
-
-        /* Style for the close button within the popup */
-        .popup-container .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #fff;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    </style>
-    <script src = "backend/dashboard.js">
-    </script>
+<title>Your Travel Planner</title>
+<meta charset="utf-8">
+<link rel="icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/stylle.css">
+<link rel="stylesheet" href="css/slider.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/sForm.js"></script>
+<script src="js/jquery.jqtransform.js"></script>
+<script src="js/jquery.equalheights.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/tms-0.4.1.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script>
+$(window).load(function () {
+    $('.slider')._TMS({
+        show: 0,
+        pauseOnHover: false,
+        prevBu: '.prev',
+        nextBu: '.next',
+        playBu: false,
+        duration: 800,
+        preset: 'random',
+        pagination: false, //'.pagination',true,'<ul></ul>'
+        pagNums: false,
+        slideshow: 8000,
+        numStatus: false,
+        banners: true,
+        waitBannerAnimation: false,
+        progressBar: false
+    });
+    $("#tabs").tabs();
+    $().UItoTop({
+        easingType: 'easeOutQuart'
+    });
+});
+</script>
 </head>
-<body>
-    <div class="nav" >   
-        <h1 style="font-style: url('assets/madelina.ttf'); color: white;">Your Travel Planner</h1>
-        <img src="assets/logoPlanner.png" style="height: 200px; width: 200px;">
-        <a href="dashboard.html">Home</a>
-        <a href="destinations.html">Destinations</a>
-        <a href="#">Itineraries</a>
-        <a href="#">Profile</a>
-        <a href="index.html">Logout/Login</a>
+<body class="page1">
+<header>
+  <div class="container_12">
+    <div class="grid_12">
+      <h1><a href="dashboard.html"><img src="assets/logoPlanner.png" alt=""></a></h1>
+      <div class="clear"></div>
     </div>
-    <div class="slideshow-container">
-        <img src="assets/egypt.jpeg" alt="Slideshow Image">
-        <button class="arrow-button left">&#8592;</button>
-        <button class="arrow-button right">&#8594;</button>
-        <div class="info-box">
-            <h2>Image Title</h2>
-            <p>Description of the image</p>
-            <button class="explore-button">Explore</button>
-            <button class="book-button">Book</button>
+    <div class="menu_block">
+      <nav>
+        <ul class="sf-menu">
+          <li class="current"><a href="dashboard.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="index.html">Login/Register</a></li>
+        </ul>
+      </nav>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</header>
+<div class="main">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="slider-relative">
+        <div class="slider-block">
+          <div class="slider"> <a href="#" class="prev"></a><a href="#" class="next"></a>
+            <ul class="items">
+              <li><img src="images/slide.jpg" alt="">
+                <div class="banner">
+                  <div>THERE ARE PLENTY OF PLACES</div>
+                  <br>
+                  <span> that are worth seeing</span> </div>
+              </li>
+              <li><img src="images/slide1.jpg" alt=""></li>
+              <li><img src="images/slide2.jpg" alt=""></li>
+              <li><img src="images/slide3.jpg" alt=""></li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="popup-container" id="welcome-popup">
-        <p id="welcomemsg"></p>
-        <span class="close-button" onclick="closePopup()">&times;</span>
+  </div>
+  <div class="content">
+    <div class="container_12">
+      <div class="grid_12">
+        <h3>Top Destinations</h3>
+      </div>
+      <div class="boxes">
+        <div class="grid_4">
+          <figure>
+            <div><img src="images/page1_img1.jpg" alt=""></div>
+            <figcaption>
+              <h3>Venice</h3>
+              Founded in the 5th century and spread over 118 small islands, Venice became a major maritime power in the 10th century. The whole city is an extraordinary architectural masterpiece in which even the smallest building contains works by some of the world's greatest artists such as Giorgione, Titian, Tintoretto, Veronese and others.<a href="#" class="btn">Details</a> </figcaption>
+          </figure>
+        </div>
+        <div class="grid_4">
+          <figure>
+            <div><img src="images/page1_img2.jpg" alt=""></div>
+            <figcaption>
+              <h3>New York</h3>
+              There's no time like the present to plan a trip to New York City, with its constant energy and endless supply of sights, attractions and activities. Don't wait—a second spent in NYC is just too valuable to miss. <a href="#" class="btn">Details</a> </figcaption>
+          </figure>
+        </div>
+        <div class="grid_4">
+          <figure>
+            <div><img src="images/page1_img3.jpg" alt=""></div>
+            <figcaption>
+              <h3>Paris</h3>
+              Paris lives up to its hype: A city with unbelievable food and culture, plus stunning views everywhere you turn. With 18 arrondissements, it’s a lot to see in one trip, but each neighbourhood has a personality all its own. You can’t miss the iconic 7th, where art and history meet—there’s the Eiffel Tower <a href="#" class="btn">Details</a> </figcaption>
+          </figure>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="grid_8">
+        <div id="tabs">
+          <ul>
+            <li><a href="#tabs-1">Hot Deals</a></li>
+          </ul>
+          <div class="clear"></div>
+          <div class="tab_cont" id="tabs-1"> <img src="images/page1_img4.jpg" alt="">
+            <div class="extra_wrapper">
+              <div class="text1">14th Century German Castle</div>
+              Schwangau lies at an elevation of 800 m (2,620 ft) at the southwest border of the German state of Bavaria. Its surroundings are characterised by the transition between the Alpine foothills <a href="#" class="btn">Details</a>
+              <div class="clear "></div>
+            </div>
+            <div class="clear cl1"></div>
+            <img src="images/page1_img5.jpg" alt="">
+            <div class="extra_wrapper">
+              <div class="text1 tx1">Sea Villa</div>
+              Get a pristine sea villa on the golock island in the maldives for a staggering low price for this summers. book now and avail the offer and earn upto 40% discount on your next travel ith us.
+              <div class="clear"></div>
+              <a href="#" class="btn bt1">Details</a>
+              <div class="clear "></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid_4">
+        <div class="newsletter_title">NewsLetter </div>
+        <div class="n_container">
+          <form id="newsletter" action="#">
+            <div class="success">Your subscribe request has been sent!</div>
+            <div class="text1">Sign up to receive our newsletters </div>
+            <label class="email">
+              <input type="email" value="email address" >
+              <span class="error">*This is not a valid email address.</span> </label>
+            <div class="clear"></div>
+            <a href="#" class="" data-type="submit"></a>
+          </form>
+          <ul class="list">
+            <li><a href="#">Youth stay at Uganda </a></li>
+            <li><a href="#">Tiger ambush at Ranthambore </a></li>
+            <li><a href="#">Hajime maste! Japan </a></li>
+            <li><a href="#">Hawa Hawaii </a></li>
+            <li><a href="#">Skinny dipping in Mauritus </a></li>
+            <li><a href="#">Blue Whale! Cape Town </a></li>
+            <li><a href="#">La la la la la  Brazilia </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="clear"></div>
     </div>
-
+  </div>
+  <div class="bottom_block">
+    <div class="container_12">
+      <div class="grid_2 prefix_2">
+        <ul>
+          <li><a href="#">FAQS Page</a></li>
+          <li><a href="#">People Say</a></li>
+        </ul>
+      </div>
+      <div class="grid_2">
+        <ul>
+          <li><a href="#">Useful links</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <div class="grid_2">
+        <ul>
+          <li><a href="#">Insurance</a></li>
+          <li><a href="#">Family Travel</a></li>
+        </ul>
+      </div>
+      <div class="grid_2">
+        <h4>Contact Us:</h4>
+        TEL: 993823852<br>
+        <a href="#">Yourtravelplanner</a> </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="socials"> <a href="#"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</footer>
 </body>
 </html>

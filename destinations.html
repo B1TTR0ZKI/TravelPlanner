@@ -5,10 +5,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destinations - Your Travel Planner</title>
     <style>
+       .booker {
+  width: 100%;
+  height: 700px;
+  background-image: url(assets/blueOcean.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.middle {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  width: 65%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.buton button {
+  padding: 1.5rem;
+  background-color: red;
+  border: 1px solid #e90000;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: rgb(255, 254, 254);
+}
+
+.buton button:hover {
+  background-color: #ccc;
+}
+
+.flight {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.flight h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+}
+
+.f1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.f2, .f4 {
+  width: 45%;
+}
+
+.f3, .f5 {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+}
+
+.flight button {
+  padding: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.f6 {
+  margin-bottom: 2rem;
+}
+
+.f6 h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: rgb(255, 253, 253);
+}
+
+.f6 p {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.f6 button {
+  padding: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.f7 {
+  margin-bottom: 2rem;
+}
+
+
+.f9 {
+  padding: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+
+
+.contact {
+  width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.contact p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.contact i {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  margin-right: 1rem;
+  vertical-align: middle;
+  border-radius: 0.25rem;
+}
+
+.contact form {
+  margin-top: 1rem;
+}
+
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.contact input::placeholder, .contact textarea::placeholder {
+  color: #ccc;
+}
+
+.contact button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.contact button:hover {
+  background-color: #222;
+}
+
+
         .destination-container {
             margin-top: 150px;
             max-height: 800px;
-            overflow-y: auto; 
         }
 
         .destination-packages {
@@ -55,7 +251,7 @@
         
     </style>
 </head>
-<body style="margin: 0; font-family: Arial, sans-serif; overflow: hidden; background-color: #f2f2f2;">
+<body style="margin: 0; font-family: Arial, sans-serif; overflow: auto; background-color: #f2f2f2;">
     <div class="nav" style="position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: left; align-items: center; padding: 10px 0; z-index: 1000;">
         <h1 style="font-style: url('assets/madelina.ttf'); color: white;">Your Travel Planner</h1>
         <img src="assets/logoPlanner.png" style="height: 200px; width: 200px;">
@@ -65,6 +261,7 @@
         <a href="#" style="color: #fff; text-decoration: none; margin: 0 15px; font-size: 16px;">Profile</a>
         <a href="form.html" style="color: #fff; text-decoration: none; margin: 0 15px; font-size: 16px;">Logout/Login</a>
     </div>
+ 
     <div class="destination-container">
         <div class="destination-packages">
             <div class="destination-package">
@@ -150,5 +347,56 @@
             
         </div>
     </div>
+
+      <!-- Header --> 
+<div class="booker">
+       <div class="middle" style="width:65%">
+      <div class="buton">
+        <button  onclick="openLink(event, 'Flight');"><i style="margin:right"></i>Flight</button>
+        <button  onclick="openLink(event, 'Hotel');"><i i style="margin:right"></i>Hotel</button>
+        <button  onclick="openLink(event, 'Car');"><i i style="margin:right"></i>Rental</button>
+      </div>
+  
+
+      <div id="Flight" class="flight">
+        <h3>Travel the world with us</h3>
+        <div class="f1">
+          <div class="f2">
+            <label>From</label>
+            <input class="f3" type="text" placeholder="Departing from">
+          </div>
+          <div class="f4">
+            <label>To</label>
+            <input class="f5" type="text" placeholder="Arriving at">
+          </div>
+        </div>
+        <p><button>Search and find dates</button></p>
+      </div>
+  
+      <div id="Hotel" class="f6">
+        <h3>Find the best hotels</h3>
+        <p>Book a hotel with us and get the best fares and promotions.</p>
+        <p>We know hotels - we know comfort.</p>
+        <p><button>Search Hotels</button></p>
+      </div>
+    </div>
+</div>
+
+     <!-- Contact -->
+  <div class="contact">
+    <h2>Contact</h2>
+    <p>Let us book your next trip!</p>
+    <i style="width:300px"></i> Pune , Maharashtra<br>
+    <i style="width:30px"></i> Phone: +020201031023<br>
+    <i style="width:30px"> </i> Email: gukhanamaza@pattal.com<br>
+    <form target="_blank">
+      <p><input type="text" placeholder="Name" required name="Name"></p>
+      <p><input type="text" placeholder="Email" required name="Email"></p>
+      <p><input type="text" placeholder="Message" required name="Message"></p>
+      <p><button type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
 </body>
 </html>
